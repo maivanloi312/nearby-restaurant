@@ -1,0 +1,6 @@
+const Product=require('../models/product')
+const dotenv=require('dotenv')
+const connectDatabase=require('../config/database')
+const {connect}=require('mongoose')
+dotenv.config({path:'backend/config/config.env'})
+connectDatabase()

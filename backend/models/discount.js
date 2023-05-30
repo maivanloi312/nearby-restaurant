@@ -1,0 +1,34 @@
+const mongoose=require('mongoose')
+const discountSchema=mongoose.Schema({
+    name:{
+        type:String,
+        unique:true,
+        require:true
+    },
+    categoryProduct:{
+        type:String,
+        require:true
+    },
+    createAt:{
+        type:Date,
+        default:Date.now()
+    },
+    validDate:{
+        type:Date,
+        require:true
+    },
+    quantity:{
+        type:Number,
+        require:true
+    },
+    value:{
+        type:Number,
+        require:true
+    },
+    userId:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:'User'
+    }
+})
+module.exports=mongoose.model('Discount',discountSchema)

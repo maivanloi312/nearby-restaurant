@@ -1,0 +1,51 @@
+{
+  "name": "ecommerce-mern-stack",
+  "version": "1.0.0",
+  "description": "project ecommerce using mern",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/sever.js",
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/sever",
+    "stag": "SET NODE_ENV=STAGING& nodemon backend/sever",
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/sever",
+    "seeder": "node backend/utils/seeder.js"
+  },
+  "author": "Dinh Vo",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.6.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cloudinary": "^1.25.1",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ethers": "^5.6.9",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-openapi": "^10.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.4",
+    "node-localstorage": "^2.1.6",
+    "nodemailer": "^6.5.0",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "react-progress-stepper": "^0.2.2",
+    "redis": "^2.8.0",
+    "stripe": "^8.149.0",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-parser": "^10.0.3",
+    "swagger-routes-express": "^3.3.1",
+    "swagger-ui": "^4.5.2",
+    "swagger-ui-dist": "^4.5.2",
+    "swagger-ui-express": "^4.3.0",
+    "sweetalert2": "^11.4.32",
+    "validator": "^13.5.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "ethereum-waffle": "^3.4.4",
+    "nodemon": "^2.0.7"
+  },
+  "proxy": "http://localhost:4000"
+}
