@@ -1,0 +1,35 @@
+.order-home .avatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 1px 1px 10px #9292929c;
+}
+.order-home{
+    width:100vw;
+    height:100vh;
+    background-color:  rgb(243, 239, 239);
+    padding-top: 50px;
+}
+.table-main{
+    border: 1px solid red;
+    width: 840px;
+   border-radius: 30px;
+}
+.table-main .table{
+    display: flex;
+    justify-content: space-between;
+}
+.table-main .col{
+    border: 2px solid rgb(0, 0, 0);
+    text-align: center;
+}
+
+
+.table-main .product-name{
+
+}
+.btn-order:hover{
+    background-color:black;
+    color: white;
+}

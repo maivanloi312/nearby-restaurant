@@ -1,0 +1,18 @@
+.input_transaction{
+    border-radius: 6px ;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(160, 157, 157);
+}
+
+.input_transaction:focus{
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
+
+.form-transaction {
+  justify-content: center;
+}

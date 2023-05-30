@@ -1,0 +1,28 @@
+.popup-tazas{
+    text-align: center !important;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-image: url("https://i0.wp.com/download.logo.wine/logo/Ethereum/Ethereum-Logo.wine.png?resize=650,400");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.btn-transaction{
+    
+    background-color: #007bff !important;
+    border-radius: 20px !important;
+}
+
+.btn-transaction a{
+    color: white !important;
+    font-weight: 500px !important;
+}
+
+
+.btn-cancel{
+    background-color: #fff !important;
+    border-radius: 20px !important;
+    width: 166px !important;
+    margin-left: 5px;
+}

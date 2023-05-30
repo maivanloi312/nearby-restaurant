@@ -1,0 +1,73 @@
+{
+  "name": "frontend2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@stripe/react-stripe-js": "^1.4.1",
+    "@stripe/stripe-js": "^1.15.0",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@truffle/hdwallet-provider": "^2.0.10",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.0",
+    "chart.js": "^3.3.2",
+    "cors": "^2.8.5",
+    "datatables": "^1.10.18",
+    "ethers": "^5.6.8",
+    "radium": "^0.26.2",
+    "react": "^17.0.2",
+    "react-alert": "^7.0.2",
+    "react-alert-template-basic": "^1.0.0",
+    "react-awesome-modal": "^2.0.5",
+    "react-bootstrap": "^1.5.2",
+    "react-chartjs-2": "^3.0.3",
+    "react-credit-cards": "^0.8.3",
+    "react-data-table-component": "^7.5.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-js-pagination": "^3.0.3",
+    "react-modal": "^3.13.1",
+    "react-notifications": "^1.7.2",
+    "react-notifications-component": "^3.1.0",
+    "react-progress-stepper": "^0.2.2",
+    "react-rating-stars-component": "^2.2.0",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
+    "react-stripe-elements": "^6.1.2",
+    "reactjs-popup": "^2.0.4",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.3.5",
+    "sweetalert2": "^11.4.31",
+    "web-vitals": "^1.1.1",
+    "web3": "^1.7.4",
+    "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

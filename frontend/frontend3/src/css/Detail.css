@@ -1,0 +1,76 @@
+.btn-order {
+    color: #fff;
+    padding: 10px 80px;
+    background-color: #32c13b;
+    border-radius: 3px;
+    text-transform: inherit;
+    font-size: 14px;
+    opacity: 0.8;
+    margin-left: 40px;
+    font-weight: 400;
+}
+.btn-order:hover{
+    background-color: #32c13b !important;
+    opacity: 0.7 !important;
+}
+.order-Confirm--body {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 6px;
+    width: 100%;
+    height: 50%;
+    border-radius: 3px;
+    padding: 30px 0;
+}
+
+.order-Confirm--block {
+    width: 1202px;
+    margin: auto;
+
+}
+
+.header-detail {
+    border-bottom: 2px dashed #ccc;
+    height: 60px;
+
+}
+
+.order-Confirm--header {
+    margin-bottom: 20px;
+
+}
+
+.row {
+    margin-top: 30px;
+}
+
+.label--CustomerName {
+    font-size: 16px;
+    margin-left: 0;
+}
+
+.img-Payment {
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+.order-Confirm--block {
+    justify-content: space-between !important;
+}
+
+.col-6 {
+    width: 50% !important;
+}
+.label-pay{
+    font-size: 14px;
+    color: #969393;
+}
+.headerTb-Order{
+    color: #969393;
+}
+.step {
+    width: 3em;
+    height: 3em;
+  }
+  
+.step.progress {
+    background: #6ab04c;
+}
