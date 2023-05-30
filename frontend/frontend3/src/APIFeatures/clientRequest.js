@@ -6,7 +6,7 @@ const config={
     }
 }
 const userToken=localStorage.getItem("token")
-const DOMAIN='https://nearbyrestaurant.onrender.com'
+const DOMAIN='https://nearbyrestaurant.up.railway.app/'
 //  const DOMAIN='localhost:4000'
 
 class ClientRequest{
