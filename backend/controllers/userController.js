@@ -75,7 +75,7 @@ exports.forgotPassword=catchAsyncErrors(async(req,res,next)=>{
     const resetToken=userLogin.getResetPasswordToken()
     const numberToken=userLogin.getRandomNumberBetween(999999,100000)
     await userLogin.save({validateBeforeSave:false})
-    const resetUrl=`${process.env.NODE_ENV!=='PRODUCTION'? process.env.FRONTEND_URL:'https://nearbyrestaurant.up.railway.app/'}/api/v1/password/reset/${resetToken}`
+    const resetUrl=`${process.env.NODE_ENV!=='PRODUCTION'? process.env.FRONTEND_URL:'https://nearbyrestaurant.up.railway.app'}/api/v1/password/reset/${resetToken}`
     const message =`Your password reset token is a follow: \n\n${resetUrl}\n\nIf you have not requested this email, then ignore it
     \n\n If you recovery with app mobile, code you app mobile: ${numberToken}`
     try {
