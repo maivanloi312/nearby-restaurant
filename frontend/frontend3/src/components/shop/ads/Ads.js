@@ -10,7 +10,7 @@ const Ads=()=>{
         <div className="hamburger-line" />
       </div>
       <div className="logo">
-        TAZAS
+        Nearby Restaurant
       </div>
       <div className="chat">
         <i className="bx bx-chat" />

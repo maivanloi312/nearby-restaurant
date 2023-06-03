@@ -1,7 +1,7 @@
 {
-  "name": "ecommerce-mern-stack",
+  "name": "restaurant-mern-stack",
   "version": "1.0.0",
-  "description": "project ecommerce using mern",
+  "description": "project restaurant using mern",
   "main": "index.js",
   "scripts": {
     "start": "node backend/sever.js",
