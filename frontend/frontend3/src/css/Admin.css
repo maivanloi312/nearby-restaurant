@@ -14007,7 +14007,7 @@ label,
 }
 
 .bg-gradient-primary {
-  background-image: linear-gradient(310deg, #7928CA 0%, #FF0080 100%);
+  background-image: linear-gradient(310deg, #ff4e03, #ffc107);
 }
 
 .bg-gradient-secondary {
@@ -14019,7 +14019,7 @@ label,
 }
 
 .bg-gradient-info {
-  background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
+  background-image: linear-gradient(310deg, #ff4e03, #ffc107);
 }
 
 .bg-gradient-warning {
@@ -15340,7 +15340,7 @@ p {
 }
 
 .text-gradient.text-info {
-  background-image: linear-gradient(310deg, #2152FF, #21D4FD);
+  background-image: linear-gradient(310deg, #ff4e03, #ffc107);
 }
 
 .text-gradient.text-success {

@@ -47,7 +47,7 @@ const UserList=()=>{
             </td>
             <td className="align-middle">
               <Link  to={"/admin/user/"+item._id} className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                Edit
+                Sửa
               </Link>
             </td>
             
@@ -64,8 +64,8 @@ const UserList=()=>{
       <div className="col-12">
         <div className="card mb-4">
           <div className="card-header pb-0">
-            <h6>User List</h6>
-            <input onChange={(e)=>changeSearchUser(e)} placeholder="Tìm sản phẩm"/>
+            <h6>Danh sách khách hàng</h6>
+            <input onChange={(e)=>changeSearchUser(e)} placeholder="Tìm khách hàng"/>
             <div style={{display:'flex',justifyContent:'space-between'}}>
             </div>
             <br/>
@@ -78,7 +78,7 @@ const UserList=()=>{
                   <tr>
                     <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Avatar</th>
                     <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
-                    <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">createAt</th>
+                    <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ngày đăng kí</th>
 
                     <th className="text-secondary opacity-7" />
                   </tr>

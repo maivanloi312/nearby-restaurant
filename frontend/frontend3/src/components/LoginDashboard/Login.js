@@ -208,7 +208,7 @@ const Login = () => {
               </label>
               <span
                 onClick={() => setCheckForgot(!checkForgot)}
-                style={{ float: "right", color: "#21d4fd" }}
+                style={{ float: "right", color: "#ffc107" }}
               >
                 Quên mật khẩu
               </span>
@@ -223,7 +223,7 @@ const Login = () => {
             </div>
           </form>
         </div>
-        <div className="card-footer text-center pt-0 px-lg-2 px-1">
+        {/* <div className="card-footer text-center pt-0 px-lg-2 px-1">
           <p className="mb-4 text-sm mx-auto">
             Bạn có tài khoản chưa?
             <Link
@@ -233,7 +233,7 @@ const Login = () => {
                Đăng kí ngay
             </Link>
           </p>
-        </div>
+        </div> */}
       </div></>
     );
   };
@@ -245,7 +245,7 @@ const Login = () => {
             className="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6"
             style={{
               backgroundImage:
-                'url("https://static.zara.net/photos///contents/2021/V/L/L21012-V2021//w/1280/Look6_1.jpg?ts=1615979341884")',
+                'url("https://www.cypressgreen.in/blog/wp-content/uploads/2021/03/food.jpg")',
             }}
           />
         </div>

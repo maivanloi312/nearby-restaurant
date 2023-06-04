@@ -215,12 +215,12 @@ const AnalyticsPage = () => {
           onChange={(e) => setFilter(e.target.value)}
         >
           <option value={"week"} selected>
-            Filter By Week
+            Lọc theo tuần
           </option>
-          <option value={"month"}>Filter By Month</option>
-          <option value={"year"}>Filter By Year</option>
+          <option value={"month"}>Lọc theo tháng</option>
+          <option value={"year"}>Lọc theo năm</option>
         </select>
-        <button
+        {/* <button
           onClick={() => {
             handleExportRP();
           }}
@@ -233,20 +233,20 @@ const AnalyticsPage = () => {
             marginLeft: "10px",
           }}
         >
-          Export Report
-        </button>
+          Xuất báo cáo
+        </button> */}
         <br />
         <br />
         <div className="row">
-          <CardItem title="Products" total={stProduct} icon="fas fa-archive" />
-          <CardItem title="Users" total={stUser} icon="fas fa-user" />
+          <CardItem title="Món ăn" total={stProduct} icon="fas fa-archive" />
+          <CardItem title="Khách hàng" total={stUser} icon="fas fa-user" />
           <CardItem
-            title="Orders"
+            title="Đơn hàng"
             total={stOrder}
             icon="fas fa-shipping-fast"
           />
           <CardItem
-            title="Total payment"
+            title="Doanh thu"
             total={payment}
             icon="fas fa-dollar-sign"
           />
@@ -270,12 +270,12 @@ const AnalyticsPage = () => {
         <br />
         <div className="row">
           <div className="col-md-4">
-            <h6>Best - selling product</h6>
+            <h6>Top món ăn bán chạy nhất</h6>
             <table className="table">
               <thead>
-                <th scope="col">No</th>
-                <th scope="col">Name</th>
-                <th scope="col">Quantity</th>
+                <th scope="col">Mã</th>
+                <th scope="col">Tên</th>
+                <th scope="col">Số lượng bán ra</th>
               </thead>
               <tbody>
                 {topSellingProduct &&
@@ -294,12 +294,12 @@ const AnalyticsPage = () => {
           </div>
           <div className="col-md-2"></div>
           <div className="col-md-4">
-            <h6>Top products with the most views </h6>
+            <h6>Top món ăn được đánh giá nhiều nhất</h6>
             <table className="table">
               <thead>
-                <th scope="col">No</th>
-                <th scope="col">Name</th>
-                <th scope="col">Num of Review</th>
+                <th scope="col">Mã</th>
+                <th scope="col">Tên</th>
+                <th scope="col">Số lượng đánh giá</th>
               </thead>
               <tbody>
                 {topReviewProduct &&
@@ -320,12 +320,12 @@ const AnalyticsPage = () => {
         <div>
           <div className="row">
             <div className="col-md-4">
-              <h6>Top users buy the most</h6>
+              <h6>Top khách hàng đặt hàng nhiều nhất</h6>
               <table className="table">
                 <thead>
-                  <th scope="col">No</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Num of Orders</th>
+                  <th scope="col">Mã</th>
+                  <th scope="col">Tên</th>
+                  <th scope="col">Số lượng đơn hàng</th>
                 </thead>
                 <tbody>
                   {topUser &&

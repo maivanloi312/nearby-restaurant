@@ -66,9 +66,9 @@ const validateEmail=(email)=> {
   var re =  /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
   return re.test(email);
 }
-const  formatterMoney = new Intl.NumberFormat('en-US', {
+const  formatterMoney = new Intl.NumberFormat('vi-VN', {
   style: 'currency',
-  currency: 'USD',
+  currency: 'VND',
 
 });
   export {getFormattedDate,checkURL,formattedDateFromParse,compareValidDate,validatePhoneNumber,validateCityOrPostalCode,validateFullName,validateEmail,formatterMoney}

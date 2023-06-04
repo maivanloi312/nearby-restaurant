@@ -144,17 +144,17 @@ const ProductDetail=(props)=>{
     >
         <div className="form-row">
           <div className="form-group col-md-6">
-            <label>Name</label>
+            <label>Tên</label>
             <input type="text" className="form-control" placeholder="Tên món ăn" name="name" defaultValue={stProduct.name} />
           </div>
           <div className="form-group col-md-6">
-          <label>Price</label>
+          <label>Giá</label>
 
             <input type="text" className="form-control" placeholder="Giá món ăn" name="price" defaultValue={stProduct.price}/>
           </div>
         </div>
         <div className="form-group">
-        <label>Description</label>
+        <label>Mô tả</label>
 
           <textarea class="form-control" placeholder="Mô tả" rows="3" name="descriptionInput" defaultValue={stProduct.description}></textarea>
         </div>
@@ -183,7 +183,7 @@ const ProductDetail=(props)=>{
             </select>
           </div>
           <div className="form-group col-md-4">
-            <label>Stock</label>
+            <label>Số lượng</label>
             <input type="text" className="form-control" placeholder="Số lượng" name="stock" defaultValue={stProduct.stock} disabled={props.match.path=='/admin/product/:id'}/>
           </div>
         </div>

@@ -324,7 +324,7 @@ exports.analyticsByUser=catchAsyncError(async (req,res,next)=>{
         data=dataAnalytics(labelsByMonth,arrayMonth,'user created','rgba(214, 48, 49,1.0)','rgba(214, 48, 49,0.4)')
     }
     if(req.query.filter=='year'){
-        data=dataAnalytics(labelsByYear,arrayYear,'user created','rgba(214, 48, 49,1.0)','rgba(214, 48, 49,0.4)')
+        data=dataAnalytics(labelsByYear,arrayYear,'Khách hàng','rgba(214, 48, 49,1.0)','rgba(214, 48, 49,0.4)')
     }
     res.status(201).json({
         data

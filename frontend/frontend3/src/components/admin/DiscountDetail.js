@@ -124,7 +124,7 @@ const DiscountDetail = (props) => {
       <div className="col-md-6">
         <form onSubmit={submitHanddler}>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput">Name</label>
+            <label htmlFor="formGroupExampleInput">Mã giảm giá</label>
             <input
               type="text"
               className="form-control"
@@ -135,7 +135,7 @@ const DiscountDetail = (props) => {
             />
           </div>
           <div className="form-group col-md-4">
-            <label>Category</label>
+            <label>Danh mục</label>
             <select
               disabled={props.match.path == "/discount/:id"}
               className="form-control"
@@ -164,7 +164,7 @@ const DiscountDetail = (props) => {
             </select>
           </div>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Valid Date</label>
+            <label htmlFor="formGroupExampleInput2">Ngày hết hạn:   </label>
             {props.match.path == "/admin/create-discount" && (
               <input
                 type="date"
@@ -180,7 +180,7 @@ const DiscountDetail = (props) => {
             )}
           </div>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Quantity</label>
+            <label htmlFor="formGroupExampleInput2">Số lượng</label>
             <input
               disabled={props.match.path == "/discount/:id"}
               type="number"
@@ -192,7 +192,7 @@ const DiscountDetail = (props) => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Value (%)</label>
+            <label htmlFor="formGroupExampleInput2">Giá trị giảm (%)</label>
             <input
               disabled={props.match.path == "/discount/:id"}
               type="number"
@@ -205,7 +205,7 @@ const DiscountDetail = (props) => {
             />
           </div>
           {props.match.path == "/admin/create-discount" && (
-            <button type="submit">Create Discount</button>
+            <button type="submit">Tạo mã giảm giá</button>
           )}
         </form>
         {/* {props.match.path=="/admin/discount/:id"&&<button onClick={()=>setOpenModal(true)}>Update Stock</button>} */}

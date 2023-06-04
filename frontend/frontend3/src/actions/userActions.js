@@ -49,10 +49,10 @@ export const register=(userData)=>async(dispatch)=>{
     try{
         dispatch({type:REGISTER_USER_REQUEST})
        
-        const data=await clientRequest.createUser(userData).then(res=>{NotificationManager.success('Success message', 'Account successfully created')
+        const data=await clientRequest.createUser(userData).then(res=>{NotificationManager.success('Success message', 'Tạo tài khoản thành công')
       
     })
-        .catch(err=>NotificationManager.error('Error message', 'Account creation failed')
+        .catch(err=>NotificationManager.error('Error message', 'Tạo tài khoản thất bại')
         )
         dispatch({
             type:REGISTER_USER_SUCCESS,
@@ -63,7 +63,7 @@ export const register=(userData)=>async(dispatch)=>{
     }
     catch(error){
      
-        NotificationManager.error('Error message', 'Account creation failed');
+        NotificationManager.error('Error message', 'Tạo tài khoản thất bại');
 
     }
 }
@@ -94,7 +94,7 @@ export const logoutUser=()=>async(dispatch)=>{
         })
         localStorage.removeItem('reduxState')
         localStorage.removeItem('token')
-        NotificationManager.success('Success message', 'Logout success')
+        NotificationManager.success('Success message', 'Đã đăng xuất')
   
     } catch (error) {
         

@@ -40,6 +40,18 @@ const OrdersList = (props) => {
       });
   }, [sizePage.current]);
   const OrderRow = (order) => {
+    let statusText = '';
+    if (order.orderStatus === 'Processing') {
+      statusText = 'Đang xử lý';
+    } else if (order.orderStatus === 'Delivered') {
+      statusText = 'Đã giao hàng';
+    } else if (order.orderStatus === 'Confirmed') {
+      statusText = 'Đã xác nhận';
+    } else if (order.orderStatus === 'Complete') {
+      statusText = 'Hoàn thành';
+    } else{
+      statusText = 'Đã hủy';
+    }
     return (
       <tr>
         <td>
@@ -49,7 +61,7 @@ const OrdersList = (props) => {
           <p className="text-xs font-weight-bold mb-0">{order.totalPrice}</p>
         </td>
         <td className="align-middle text-center text-sm">
-          <p className="text-xs font-weight-bold mb-0">{order.orderStatus}</p>
+          <p className="text-xs font-weight-bold mb-0">{statusText} </p>
         </td>
         <td className="align-middle text-center">
           <span className="text-secondary text-xs font-weight-bold">
@@ -64,7 +76,7 @@ const OrdersList = (props) => {
               data-toggle="tooltip"
               data-original-title="Edit user"
             >
-              Detail
+              Chi tiết
             </Link>
           )}
           {props.match.path == "/order/me" && (
@@ -90,7 +102,7 @@ const OrdersList = (props) => {
         <div className="col-12">
           <div className="card mb-4">
             <div className="card-header pb-0">
-              <h6>Order List</h6>
+              <h6>Danh sách đơn hàng</h6>
               <div
                 style={{ display: "flex", justifyContent: "space-between" }}
               ></div>
@@ -102,16 +114,16 @@ const OrdersList = (props) => {
                   <thead>
                     <tr>
                       <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Order Id
+                        Mã đơn hàng
                       </th>
                       <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                        Total Price
+                        Tổng thanh toán
                       </th>
                       <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Status
+                        Trạng thái
                       </th>
                       <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        CreatedAt
+                        Ngày đặt
                       </th>
                       <th className="text-secondary opacity-7" />
                     </tr>

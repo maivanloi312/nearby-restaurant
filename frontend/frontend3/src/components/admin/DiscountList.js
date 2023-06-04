@@ -61,7 +61,7 @@ const DiscountList = () => {
             data-toggle="tooltip"
             data-original-title="Edit user"
           >
-            Info
+            Thông tin
           </Link>
         </td>
       </tr>
@@ -73,11 +73,11 @@ const DiscountList = () => {
         <div className="col-12">
           <div className="card mb-4">
             <div className="card-header pb-0">
-              <h6>Discount List</h6>
+              <h6>Danh sách mã giảm giá</h6>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <input
                   className="search-product"
-                  placeholder="Tìm giảm giá"
+                  placeholder="Tìm mã giảm giá"
                   onChange={(e) => setSearchName(e.currentTarget.value)}
                 />
                 {user.role == "admin" && (
@@ -88,7 +88,7 @@ const DiscountList = () => {
                     to="/admin/create-discount"
                     role="button"
                   >
-                    Create Discount
+                    Tạo mã giảm giá
                   </Link>
                 )}
               </div>
@@ -100,20 +100,20 @@ const DiscountList = () => {
                   <thead>
                     <tr>
                       <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Name
+                        Mã giảm giá
                       </th>
                       <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                        Valid
+                        Ngày hết hạn
                       </th>
                       <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Quantity{" "}
+                        Số lượng{" "}
                       </th>
                       <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                         {" "}
                       </th>
 
                       <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        CreatedAt
+                        Ngày tạo
                       </th>
                       <th className="text-secondary opacity-7" />
                     </tr>

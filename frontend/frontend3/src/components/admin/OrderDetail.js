@@ -223,9 +223,9 @@ const OrderDetail = (props) => {
         {order.shippingInfo && (
           <div className="order-Confirm mt-8">
             <div className="order-Confirm--header d-flex justify-content-between">
-              <h3>Order Confirmation</h3>
+              <h3>Chi tiết đơn hàng</h3>
               <div className="d-flex align-items-center">
-                <span>Order Total: </span>{" "}
+                <span>Tổng tiền: </span>{" "}
                 <h3> {formatterMoney.format(order.totalPrice)}</h3>{" "}
                 <div className="btn-group">
             {order.orderStatus == "Processing" &&
@@ -234,7 +234,7 @@ const OrderDetail = (props) => {
                   className="btn btn-order "
                   onClick={(status) => updateOrderStatus("Confirmed")}
                 >
-                  Confirm Order
+                  Xác nhận đơn hàng
                 </button>
               )}
               </div>
@@ -243,14 +243,14 @@ const OrderDetail = (props) => {
             <div className="order-Confirm--body">
               <div className="order-Confirm--block row">
                 <div className="col-6">
-                  <h4 className="header-detail">Your information</h4>
+                  <h4 className="header-detail">Thông tin tài khoản</h4>
                   <span className="row">
                     <label className="label--CustomerName">{user.name}</label>
                     <span>{user.emailUser}</span>
                   </span>
                 </div>
                 <div className="col-6">
-                  <h4 className="header-detail">Shipping Address</h4>
+                  <h4 className="header-detail">Địa chỉ giao hàng</h4>
                   <span className="row">
                     <label className="label--CustomerName">{user.name}</label>
                     <span>{order.shippingInfo.address}</span>
@@ -264,7 +264,7 @@ const OrderDetail = (props) => {
 
               <div className="order-Confirm--block row">
                 <div className="col-6">
-                  <h4 className="header-detail">Payment</h4>
+                  <h4 className="header-detail">Phương thức thanh toán</h4>
                   <span className="row">
                     <div>
                      {
@@ -314,7 +314,7 @@ const OrderDetail = (props) => {
                   </span>
                 </div>
                 <div className="col-6">
-                  <h4 className="header-detail">Billing Address</h4>
+                  <h4 className="header-detail">Địa chỉ thanh toán</h4>
                   <span className="row">
                     <label className="label--CustomerName">{user.name}</label>
                     <span>{order.shippingInfo.address}</span>
@@ -339,10 +339,10 @@ const OrderDetail = (props) => {
             <table class="table">
               <thead className="headerTb-Order">
                 <tr>
-                  <th>Item</th>
-                  <th>Quantity</th>
-                  <th>Image</th>
-                  <th>Price</th>
+                  <th>Món ăn</th>
+                  <th>Số lượng</th>
+                  <th>Hình ảnh</th>
+                  <th>Giá</th>
                 </tr>
               </thead>
               <tbody>
@@ -378,20 +378,20 @@ const OrderDetail = (props) => {
           style={{ minWidth: "255px", minHeight: "200px", float: "right" }}
         >
           <span className="d-flex justify-content-between">
-            <label className="label-pay">Subtotal: </label>
+            <label className="label-pay">Tổng tiền: </label>
             <label>{formatterMoney.format(order.itemsPrice)}</label>
           </span>
           <span className="d-flex justify-content-between">
-            <label className="label-pay">Shipping: </label>
+            <label className="label-pay">Phí vận chuyển: </label>
             <label>{formatterMoney.format(order.shippingPrice)}</label>
           </span>
           <span className="d-flex justify-content-between">
-            <label className="label-pay">Tax: </label>
+            <label className="label-pay">Thuế: </label>
             <label>{formatterMoney.format(order.taxPrice)}</label>
           </span>
           <span className="d-flex justify-content-between">
             <label className="" style={{ fontSize: "15px" }}>
-              Total:{" "}
+              Tổng thanh toán:{" "}
             </label>
             <h4>{formatterMoney.format(order.totalPrice)}</h4>
           </span>
@@ -405,7 +405,7 @@ const OrderDetail = (props) => {
                                        
                 }
                 >
-                  Confirm Order
+                  Xác nhận đơn hàng
                 </button>
               )}
             {order.orderStatus == "Confirmed" &&
@@ -414,7 +414,7 @@ const OrderDetail = (props) => {
                   className="btn btn-order"
                   onClick={(status) => updateOrderStatus("Delivered")}
                 >
-                  Delivered
+                  Đã giao hàng
                 </button>
               )}
             {order.orderStatus == "Delivered" &&
@@ -423,7 +423,7 @@ const OrderDetail = (props) => {
                   className="btn"
                   onClick={(status) => updateOrderStatus("Complete")}
                 >
-                  Has Received
+                  Đã hoàn thành
                 </button>
               )}
             {order.orderStatus == "Processing" &&
@@ -432,7 +432,7 @@ const OrderDetail = (props) => {
                   className="btn"
                   onClick={(status) => updateOrderStatus("Cancel")}
                 >
-                  Cancel Order
+                  Hủy đơn hàng
                 </button>
               )}
           </div>
@@ -447,9 +447,9 @@ const OrderDetail = (props) => {
       .then((res) => {
         setOrder({ ...order, orderStatus: res.order.orderStatus });
         // incrementStep();
-        NotificationManager.success("Success", "success");
+        NotificationManager.success("Success", "Cập nhật trạng thái đơn hàng thành công");
       })
-      .catch((err) => NotificationManager.error("Success", "error"));
+      .catch((err) => NotificationManager.error("Success", "Đã có lỗi xảy ra"));
   };
 
   return (
