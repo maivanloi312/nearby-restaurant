@@ -42,7 +42,7 @@ const ProductDetail=(props)=>{
     if(props.match.path=='/admin/create-product'){
       if(isNaN(document.getElementsByName('price')[0].value)
           ||isNaN(document.getElementsByName('stock')[0].value)){
-        NotificationManager.error('Error', 'Wrong format')
+        NotificationManager.error('Error', 'Định dạng không đúng')
         return
        }
       const data={
@@ -74,7 +74,7 @@ const ProductDetail=(props)=>{
 
 
     
-    clientRequest.newProduct(data).then(res=>{NotificationManager.success('Success', 'Success')
+    clientRequest.newProduct(data).then(res=>{NotificationManager.success('Success', 'Đã thêm')
     window.location.href=`/admin/product/${res.product._id}`
     })
     
@@ -122,7 +122,7 @@ const ProductDetail=(props)=>{
       }
 
     //update duoc nhung bao loi
-    clientRequest.updateProduct(stProduct._id,data).then(NotificationManager.success('Success', 'Success')).catch(err=>console.error())
+    clientRequest.updateProduct(stProduct._id,data).then(NotificationManager.success('Success', 'Đã cập nhật')).catch(err=>console.error())
       
     }
     
@@ -130,7 +130,7 @@ const ProductDetail=(props)=>{
   }
   const deleteItem=(id)=>{
     
-  clientRequest.deleteProduct(id).then(res=>{NotificationManager.success('Success', 'Success')
+  clientRequest.deleteProduct(id).then(res=>{NotificationManager.success('Success', 'Đã xóa')
     window.history.go(-1)
   }).catch(err=> NotificationManager.error('Error', 'Error'))
      
@@ -177,21 +177,19 @@ const ProductDetail=(props)=>{
               <option value={'NOODLE'}>Bún/Phở/Mì/Cháo</option>
               <option value={'SEAFOOD'}>Ốc/Cá/Hải sản</option>
               <option value={'HOTPOT'}>Lẩu/Đồ nướng</option>
-              <option value={'DESSERT'}>Giày</option>
+              <option value={'DESSERT'}>Tráng miệng</option>
               <option value={'BEER'}>Bia/Rượu</option>
               <option value={'SOFT'}>Sinh tố/Nước ngọt</option>
             </select>
           </div>
           <div className="form-group col-md-4">
             <label>Số lượng</label>
-            <input type="text" className="form-control" placeholder="Số lượng" name="stock" defaultValue={stProduct.stock} disabled={props.match.path=='/admin/product/:id'}/>
+            <input type="text" className="form-control" placeholder="Số lượng" name="stock" defaultValue={stProduct.stock}/>
           </div>
         </div>
         
         <button type="submit" className="btn btn-primary">Lưu</button>
         {props.match.path=='/admin/product/:id' && <button style={{marginLeft:'15px'}} type="submit" className="btn btn-danger" onClick={()=>deleteItem(stProduct._id)}>Xóa</button>}
-        {props.match.path=='/admin/product/:id' && <button style={{marginLeft:'15px'}} type="submit" className="btn btn-success"  onClick={()=>setOpenModal(true)}>Cập nhật số lượng</button>}
-
       </form>
       )
 }
@@ -229,40 +227,6 @@ const InputImage=()=>{
   </div>
   )
 }
-const updateStock=async()=>{
-  if(!Number.isInteger(Number (document.getElementsByName('addStock')[0].value))){
-    NotificationManager.error('Error', 'Định dạng số lượng không đúng')
-    return
-  }
-    const data={
-      productId:stProduct._id,
-      quantity:document.getElementsByName('addStock')[0].value
-    }
-    await clientRequest.addStock(data).then(res=>NotificationManager.success('Success', 'Success'))
-    setOpenModal(false)
-}
-const ModalStock=()=>{
-  return <Modal  visible={openModal} width="400" height="300" effect="fadeInUp"
-  onClickAway={() => setOpenModal(false)}
-  >  <div  className='popup-tazas text-center'>
-      <div style={{margin:'auto'}}> 
-            <h6>Cập nhật số lượng</h6>
-            <input type="number" defaultValue={0}  name='addStock'/>
-                <div className='btn-group btn'>
-                     <button className='btn btn-success' onClick={()=>updateStock()}>
-                      Cập nhật
-                     </button>
-                     <button className='btn'>
-                     <a href="javascript:void(0);"
-                      onClick={() =>setOpenModal(false)}
-                      >Đóng</a>
-                     </button>
-                     
-                 </div>
-                 </div>
-                 </div>
-             </Modal>
-}
 const InventoryRow=(item)=>{
   return <tr>
       
@@ -281,21 +245,6 @@ const InventoryRow=(item)=>{
             
           </tr>
 }
-  const TableInventories=()=>{
-    return <table className="table align-items-center mb-0">
-      <thead>
-        <tr>
-          <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Người tạo</th>
-          <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Số lượng</th>
-          <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Thời gian cập nhật</th>
-        </tr>
-      </thead>
-      <tbody>
-        {inventories && inventories.map(item=>InventoryRow(item))}
-      </tbody>
-
-    </table>
-  }
     return(
         <div style={{paddingTop:'30px'}}>
             <h3>{props.match.path=='/admin/create-product'?('Thêm Sản Phẩm'):('Chi Tiết Sản Phẩm')}</h3>
@@ -305,8 +254,6 @@ const InventoryRow=(item)=>{
             <Form/>
             <br/>
             <br/>
-            <h6>Lịch sử cập nhật số lượng</h6>
-       <TableInventories/>
 
            </div>
            <div className="col-md-1"></div>
@@ -315,7 +262,6 @@ const InventoryRow=(item)=>{
            </div>
        </div>
        <NotificationContainer/>
-      <ModalStock/>
        </div>
     )
 }

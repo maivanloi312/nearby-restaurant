@@ -139,28 +139,19 @@ const DiscountDetail = (props) => {
             <select
               disabled={props.match.path == "/discount/:id"}
               className="form-control"
-              name="category"
+              // name="category"
               value={discount && discount.categoryProduct}
               name="categoryProduct"
             >
-              <option value={"jacketsCoats"} selected>
-                Jackets & Coats
-              </option>
-              <option value={"hoodiesSweatshirts"}>
-                Hoodies & Sweatshirts
-              </option>
-              <option value={"cardiganJumpers"}>Cardigan & Jumpers</option>
-              <option value={"tshirtTanks"}>T-shirt & Tanks</option>
-              <option value={"shoes"}>Shoes</option>
-              <option value={"shirts"}>Shirts</option>
-              <option value={"basics"}>Basics</option>
-              <option value={"blazersSuits"}>Blazers & Suits</option>
-              <option value={"shorts"}>Shorts</option>
-              <option value={"trousers"}>Trousers</option>
-              <option value={"jeans"}>Jeans</option>
-              <option value={"swimwear"}>Swimwear</option>
-              <option value={"underwear"}>Underwear</option>
-              <option value={"socks"}>Socks</option>
+              <option value={"breadStickyRice"} selected>Bánh mì & Xôi</option>
+              <option value={"vegetarianFood"}>Đồ chay & Thức ăn dinh dưỡng</option>
+              <option value={"brokenRice"}>Cơm & Cơm tấm</option>
+              <option value={"noodleCongee"}>Bún/Phở/Mì & Cháo</option>
+              <option value={"seafood"}>Seafood</option>
+              <option value={"hotpotBarbecue"}>Lẩu & Đồ nướng</option>
+              <option value={"dessert"}>Tráng miệng</option>
+              <option value={"beer"}>Bia & Rượu</option>
+              <option value={"softDrink"}>Sinh tố & Nước ngọt</option>
             </select>
           </div>
           <div className="form-group">

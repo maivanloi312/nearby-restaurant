@@ -110,7 +110,7 @@ const Home =()=>{
               <option value={'NOODLE'}>Bún/Phở/Mì/Cháo</option>
               <option value={'SEAFOOD'}>Ốc/Cá/Hải sản</option>
               <option value={'HOTPOT'}>Lẩu/Đồ nướng</option>
-              <option value={'DESSERT'}>Giày</option>
+              <option value={'DESSERT'}>Tráng miệng</option>
               <option value={'BEER'}>Bia/Rượu</option>
               <option value={'SOFT'}>Sinh tố/Nước ngọt</option>
       </select>

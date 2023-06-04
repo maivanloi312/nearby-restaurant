@@ -38,7 +38,7 @@ const Sidebar=()=>{
       {user.role=='admin'&&<SidebarRow url={'/admin/users'} icon={"fas fa-users"} title={'Khách hàng'}/>}
       <SidebarRow url={'/profile'} icon={"fas fa-user"} title={'Tài khoản'}/>
       {user.role=='user'&&<SidebarRow url={'/order/me'} icon={"fas fa-shipping-fast"} title={'Đơn hàng của tôi'}/>}
-      <SidebarRow url={'/discounts'} icon={"fas fa-badge-dollar"} title={'Giảm giá'}/>
+      {/* <SidebarRow url={'/discounts'} icon={"fas fa-badge-dollar"} title={'Giảm giá'}/> */}
       {user.role=='admin'&&<SidebarRow url={'/admin/analytics'} icon={"fas fa-chart-line"} title={'Thống kê'}/>}
     </ul>
   </div>

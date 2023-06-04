@@ -41,7 +41,7 @@ const Menu =(props)=>{
           <div className={'show-menu'}>
             <ul>
               <li><Link to='/profile'>Profile</Link></li>
-              <li onClick={()=>logoutUser1()}>Log out</li>
+              <li onClick={()=>logoutUser1()}>Đăng xuất</li>
             </ul>
           </div>
         </li>
