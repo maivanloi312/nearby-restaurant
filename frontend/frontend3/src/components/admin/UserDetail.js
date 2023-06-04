@@ -61,7 +61,7 @@ const UserDetail=(props)=>{
     const MenuUser=()=>{
         return (user && <div className="container-fluid">
         <div className="page-header min-height-300 border-radius-xl mt-4" style={{backgroundImage: `url(${Curved})`, backgroundPositionY: '50%'}}>
-          <span className="mask bg-gradient-primary opacity-6" />
+          <span className="mask opacity-6" />
         </div>
         <div className="card card-body blur shadow-blur mx-4 mt-n6">
           <div className="row gx-4">

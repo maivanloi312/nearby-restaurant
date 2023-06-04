@@ -58,7 +58,7 @@ const ProductsList=()=>{
                   </td>
                   <td className="align-middle">
                     <Link  to={"/admin/product/"+product._id} className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                      Edit
+                      Sửa
                     </Link>
                   </td>
                   
@@ -84,10 +84,10 @@ const ProductsList=()=>{
     <div className="col-12">
       <div className="card mb-4">
         <div className="card-header pb-0">
-          <h6>Product List</h6>
+          <h6>Danh sách món ăn</h6>
           <div style={{display:'flex',justifyContent:'space-between'}}>
-          <input className='search-product' onChange={e=>onChangeSearchProduct(e)} placeholder="Search product"/>
-          <Link name="" id="" class="btn create-button" to="/admin/create-product" role="button" style={{background:"#29e625"}}>Create Product</Link>
+          <input className='search-product' onChange={e=>onChangeSearchProduct(e)} placeholder="Tìm sản phẩm"/>
+          <Link name="" id="" class="btn create-button" to="/admin/create-product" role="button" style={{background:"#29e625"}}>Thêm Món Ăn</Link>
           </div>
           <br/>
 
@@ -97,10 +97,10 @@ const ProductsList=()=>{
             <table className="table align-items-center mb-0">
               <thead>
                 <tr>
-                  <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-                  <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Seller</th>
-                  <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Stock</th>
-                  <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">CreatedAt</th>
+                  <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tên</th>
+                  <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Người tạo</th>
+                  <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Số lượng</th>
+                  <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Thời gian</th>
                   <th className="text-secondary opacity-7" />
                 </tr>
               </thead>

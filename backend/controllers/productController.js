@@ -13,7 +13,7 @@ const Cart = require('../models/cart');
 exports.newProduct=catchAsyncError (async (req,res,next)=>{
     if(!checkUrlImage(req.body.data.image)){
         const result=await cloudinary.v2.uploader.upload(req.body.data.image,{
-            folder:'tazas'
+            folder:'nearby'
         })
         if(result){
             req.body.data.images=[]
@@ -51,7 +51,7 @@ exports.uploadImage=catchAsyncError(async (req,res,next)=>{
     var result;
     if(!checkUrlImage(req.body.image)){
         result =await cloudinary.v2.uploader.upload(req.body.image,{
-            folder:'tazas'
+            folder:'nearby'
         })
         
     }
@@ -150,7 +150,7 @@ exports.updateProduct=catchAsyncError(async (req,res,next)=>{
    
     if(!checkUrlImage(req.body.data.image)){
         const result=await cloudinary.v2.uploader.upload(req.body.data.image,{
-            folder:'tazas'
+            folder:'nearby'
         })
         if(result){
             req.body.data.images=[]

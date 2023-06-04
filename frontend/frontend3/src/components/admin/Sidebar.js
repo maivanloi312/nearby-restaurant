@@ -32,14 +32,14 @@ const Sidebar=()=>{
   <div className="collapse navbar-collapse  w-auto" id="sidenav-collapse-main">
     <ul className="navbar-nav">
     <SidebarRow url={'/home'} icon={"fas fa-store"} title={'Store'}/>
-      {user.role=='admin'&&<SidebarRow url={'/admin/dashboard'} icon={'fas fa-home'} title={'Dashboard'}/>}
-      {user.role=='admin'&&<SidebarRow url={'/admin/products'} icon={'fas fa-archive'} title={'Products'}/>}
-      {user.role=='admin'&&<SidebarRow url={'/admin/orders'} icon={"fas fa-shipping-fast"} title={'Orders'}/>}
-      {user.role=='admin'&&<SidebarRow url={'/admin/users'} icon={"fas fa-users"} title={'Customer'}/>}
-      <SidebarRow url={'/profile'} icon={"fas fa-user"} title={'Profile'}/>
-      {user.role=='user'&&<SidebarRow url={'/order/me'} icon={"fas fa-shipping-fast"} title={'My orders'}/>}
-      <SidebarRow url={'/discounts'} icon={"fas fa-badge-dollar"} title={'Discounts'}/>
-      {user.role=='admin'&&<SidebarRow url={'/admin/analytics'} icon={"fas fa-chart-line"} title={'Analytics'}/>}
+      {user.role=='admin'&&<SidebarRow url={'/admin/dashboard'} icon={'fas fa-home'} title={'Tổng quan'}/>}
+      {user.role=='admin'&&<SidebarRow url={'/admin/products'} icon={'fas fa-archive'} title={'Món ăn'}/>}
+      {user.role=='admin'&&<SidebarRow url={'/admin/orders'} icon={"fas fa-shipping-fast"} title={'Đơn hàng'}/>}
+      {user.role=='admin'&&<SidebarRow url={'/admin/users'} icon={"fas fa-users"} title={'Khách hàng'}/>}
+      <SidebarRow url={'/profile'} icon={"fas fa-user"} title={'Tài khoản'}/>
+      {user.role=='user'&&<SidebarRow url={'/order/me'} icon={"fas fa-shipping-fast"} title={'Đơn hàng của tôi'}/>}
+      <SidebarRow url={'/discounts'} icon={"fas fa-badge-dollar"} title={'Giảm giá'}/>
+      {user.role=='admin'&&<SidebarRow url={'/admin/analytics'} icon={"fas fa-chart-line"} title={'Thống kê'}/>}
     </ul>
   </div>
   

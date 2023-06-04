@@ -55,7 +55,7 @@ const ProductHome = (props) => {
     const cartItem = product;
     localStorage.setItem('cartItem', JSON.stringify(cartItem));
     if (!localStorage.getItem('token')) {
-      NotificationManager.error('Error', 'You are not logged in');
+      NotificationManager.error('Error', 'Bạn chưa đăng nhập');
       window.location.href = '/login';
       return;
     }
@@ -73,7 +73,7 @@ const ProductHome = (props) => {
     clientRequest
       .addToCartItem(data)
       .then((res) =>
-        NotificationManager.success('Success', 'update cart success')
+        NotificationManager.success('Success', 'Cập nhật giỏ hàng thành công')
       )
       .catch((err) => setShowModal(true));
   };
@@ -83,16 +83,16 @@ const ProductHome = (props) => {
   const reviewProduct = () => {
     const comment = document.getElementsByName('inputReview')[0].value;
     if (comment == '') {
-      NotificationManager.error('Error', 'Review not empty');
+      NotificationManager.error('Error', 'Đánh giá không được để trống');
       return;
     }
     clientRequest
       .updateReviewProduct(rating, comment, product._id, user.avatar.url)
       .then((res) => {
-        NotificationManager.success('Success', 'Review success');
+        NotificationManager.success('Success', 'Đánh giá thành công');
         window.location.reload();
       })
-      .catch((err) => NotificationManager.error('Error', 'Review error'));
+      .catch((err) => NotificationManager.error('Error', 'Đã xảy ra lỗi'));
   };
   return (
     <>
@@ -154,7 +154,7 @@ const ProductHome = (props) => {
           </div>
         </div>
         <div className='review-product container'>
-          <h3 className='text-center'>Reviews Product</h3>
+          <h3 className='text-center'>Đánh giá sản phẩm</h3>
           {user && (
             <div className='row' style={{ alignItems: 'center' }}>
               <div className='col-md-2 text-left'>
@@ -174,7 +174,7 @@ const ProductHome = (props) => {
                 />
                 <input
                   className='input-review'
-                  placeholder='Enter review product'
+                  placeholder='Đánh giá sản phẩm'
                   name='inputReview'
                 />
                 <br></br>
@@ -183,7 +183,7 @@ const ProductHome = (props) => {
                   className='btn btn-primary'
                   onClick={() => reviewProduct()}
                 >
-                  Review
+                  Đánh giá
                 </button>
               </div>
             </div>
@@ -215,7 +215,7 @@ const ProductHome = (props) => {
                     />
 
                     <br />
-                    <span>Created At: </span>
+                    <span>Thời gian: </span>
                     <span>{getFormattedDate(item.createAt)}</span>
                   </div>
                 </div>
@@ -227,7 +227,7 @@ const ProductHome = (props) => {
       <ModalPopup
         open={showModal}
         handleChange={() => setShowModal(!showModal)}
-        title={'Ban chua login'}
+        title={'Bạn chưa đăng nhập'}
         linkTo={'/login'}
         titleLinkTo={'Login'}
       />

@@ -56,19 +56,19 @@ const ProductDetail=(props)=>{
       }
       console.log(data)
       if(!data.name|| !data.price || !data.description || !data.classify || !data.category || !data.stock || !data.image){
-        NotificationManager.error('Error', 'Please enter full information')
+        NotificationManager.error('Error', 'Vui lòng nhập đầy đủ thông tin')
         return
       }
       if(Number (data.price)<0){
-        NotificationManager.error('Error', 'Please enter price greater 0')
+        NotificationManager.error('Error', 'Giá phải lớn hơn 0')
         return
       }
       if(Number (data.stock)<0){
-        NotificationManager.error('Error', 'Please enter stock greater 0')
+        NotificationManager.error('Error', 'Số lượng phải lớn hơn 0')
         return
       }
       if(!Number.isInteger(data.stock)){
-        NotificationManager.error('Error', 'Wrong format stock')
+        NotificationManager.error('Error', 'Số lượng định dạng không đúng')
         return
       }
 
@@ -92,7 +92,7 @@ const ProductDetail=(props)=>{
       })
       if(isNaN(document.getElementsByName('price')[0].value)
           ||isNaN(document.getElementsByName('stock')[0].value)){
-        NotificationManager.error('Error', 'Wrong format')
+        NotificationManager.error('Error', 'Sai định dạng')
         return
        }
       const data={
@@ -105,19 +105,19 @@ const ProductDetail=(props)=>{
         image:avatar
       }
       if(!data.name|| !data.price || !data.description || !data.classify || !data.category || !data.stock || !data.image){
-        NotificationManager.error('Error', 'Please full enter information')
+        NotificationManager.error('Error', 'Vui lòng nhập đầy đủ thông tin')
         return
       }
       if(Number (data.price)<0){
-        NotificationManager.error('Error', 'Please enter price greater 0')
+        NotificationManager.error('Error', 'Vùi lòng nhập giá lớn hơn 0')
         return
       }
       if(Number (data.stock)<0){
-        NotificationManager.error('Error', 'Please enter stock greater 0')
+        NotificationManager.error('Error', 'Vui lòng nhập số lượng lớn hơn 0')
         return
       }
       if(!Number.isInteger(data.stock)){
-        NotificationManager.error('Error', 'Wrong format stock')
+        NotificationManager.error('Error', 'Định dạng số lượng không đúng')
         return
       }
 
@@ -145,52 +145,52 @@ const ProductDetail=(props)=>{
         <div className="form-row">
           <div className="form-group col-md-6">
             <label>Name</label>
-            <input type="text" className="form-control" placeholder="Name product" name="name" defaultValue={stProduct.name} />
+            <input type="text" className="form-control" placeholder="Tên món ăn" name="name" defaultValue={stProduct.name} />
           </div>
           <div className="form-group col-md-6">
           <label>Price</label>
 
-            <input type="text" className="form-control" placeholder="Price product" name="price" defaultValue={stProduct.price}/>
+            <input type="text" className="form-control" placeholder="Giá món ăn" name="price" defaultValue={stProduct.price}/>
           </div>
         </div>
         <div className="form-group">
         <label>Description</label>
 
-          <textarea class="form-control" placeholder="Description" rows="3" name="descriptionInput" defaultValue={stProduct.description}></textarea>
+          <textarea class="form-control" placeholder="Mô tả" rows="3" name="descriptionInput" defaultValue={stProduct.description}></textarea>
         </div>
         
         <div className="form-row">
           <div className="form-group col-md-4">
-            <label>Classify</label>
+            <label>Phân loại</label>
             <select className="form-control" name='classify' defaultValue={stProduct.classify}>
-              <option selected>Men</option>
-              <option>Women</option>
-              <option>Kid</option>
+              <option selected>Mới</option>
+              <option>Signature</option>
+              <option>Truyền thống</option>
             </select>
           </div>
           <div className="form-group col-md-4">
-            <label>Category</label>
+            <label>Danh mục</label>
             <select className="form-control" name='category' defaultValue={stProduct.category}>
-              <option value={'T_SHIRT'}>Áo thun</option>
-              <option value={'SHIRT'}>Áo sơ mi</option>
-              <option value={'COAT'}>Áo khoác</option>
-              <option value={'SHORT'}>Quần lửng</option>
-              <option value={'TROUSER'}>Quần dài</option>
-              <option value={'SUIT'}>Vét</option>
-              <option value={'SHOES'}>Giày</option>
-              <option value={'HAT'}>Mũ</option>
-              <option value={'BAG'}>Túi xách</option>
+              <option value={'BREAD'}>Bánh mì/Xôi</option>
+              <option value={'VEGETARIAN'}>Đồ chay</option>
+              <option value={'RICE'}>Cơm/Cơm tấm</option>
+              <option value={'NOODLE'}>Bún/Phở/Mì/Cháo</option>
+              <option value={'SEAFOOD'}>Ốc/Cá/Hải sản</option>
+              <option value={'HOTPOT'}>Lẩu/Đồ nướng</option>
+              <option value={'DESSERT'}>Giày</option>
+              <option value={'BEER'}>Bia/Rượu</option>
+              <option value={'SOFT'}>Sinh tố/Nước ngọt</option>
             </select>
           </div>
           <div className="form-group col-md-4">
             <label>Stock</label>
-            <input type="text" className="form-control" placeholder="Stock" name="stock" defaultValue={stProduct.stock} disabled={props.match.path=='/admin/product/:id'}/>
+            <input type="text" className="form-control" placeholder="Số lượng" name="stock" defaultValue={stProduct.stock} disabled={props.match.path=='/admin/product/:id'}/>
           </div>
         </div>
         
-        <button type="submit" className="btn btn-primary">Save</button>
-        {props.match.path=='/admin/product/:id' && <button style={{marginLeft:'15px'}} type="submit" className="btn btn-danger" onClick={()=>deleteItem(stProduct._id)}>Delete</button>}
-        {props.match.path=='/admin/product/:id' && <button style={{marginLeft:'15px'}} type="submit" className="btn btn-success"  onClick={()=>setOpenModal(true)}>Update Stock</button>}
+        <button type="submit" className="btn btn-primary">Lưu</button>
+        {props.match.path=='/admin/product/:id' && <button style={{marginLeft:'15px'}} type="submit" className="btn btn-danger" onClick={()=>deleteItem(stProduct._id)}>Xóa</button>}
+        {props.match.path=='/admin/product/:id' && <button style={{marginLeft:'15px'}} type="submit" className="btn btn-success"  onClick={()=>setOpenModal(true)}>Cập nhật số lượng</button>}
 
       </form>
       )
@@ -215,7 +215,7 @@ const onChangeAvatar=(e)=>{
 }
 const InputImage=()=>{
     return(<div className="custom-file">
-      <label > product image</label>
+      <label >Ảnh món ăn</label>
     <input
      type='file'
      name='avatar'
@@ -224,14 +224,14 @@ const InputImage=()=>{
      onChange={(e)=>onChangeAvatar(e)}
     required 
     />
-    <div className="invalid-feedback">Example invalid custom file feedback</div>
+    <div className="invalid-feedback">Ảnh không hợp lệ</div>
     <img src={(avatar)?(avatar):(imageDefault)} style={{width:'100%'}}/>
   </div>
   )
 }
 const updateStock=async()=>{
   if(!Number.isInteger(Number (document.getElementsByName('addStock')[0].value))){
-    NotificationManager.error('Error', 'Wrong format stock ')
+    NotificationManager.error('Error', 'Định dạng số lượng không đúng')
     return
   }
     const data={
@@ -246,16 +246,16 @@ const ModalStock=()=>{
   onClickAway={() => setOpenModal(false)}
   >  <div  className='popup-tazas text-center'>
       <div style={{margin:'auto'}}> 
-            <h6>Update stock</h6>
+            <h6>Cập nhật số lượng</h6>
             <input type="number" defaultValue={0}  name='addStock'/>
                 <div className='btn-group btn'>
                      <button className='btn btn-success' onClick={()=>updateStock()}>
-                      Update
+                      Cập nhật
                      </button>
                      <button className='btn'>
                      <a href="javascript:void(0);"
                       onClick={() =>setOpenModal(false)}
-                      >Close</a>
+                      >Đóng</a>
                      </button>
                      
                  </div>
@@ -285,9 +285,9 @@ const InventoryRow=(item)=>{
     return <table className="table align-items-center mb-0">
       <thead>
         <tr>
-          <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Seller</th>
-          <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Quantity</th>
-          <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Update Date</th>
+          <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Người tạo</th>
+          <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Số lượng</th>
+          <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Thời gian cập nhật</th>
         </tr>
       </thead>
       <tbody>
@@ -298,14 +298,14 @@ const InventoryRow=(item)=>{
   }
     return(
         <div style={{paddingTop:'30px'}}>
-            <h3>{props.match.path=='/admin/create-product'?('Create Product'):('Product Detail')}</h3>
+            <h3>{props.match.path=='/admin/create-product'?('Thêm Sản Phẩm'):('Chi Tiết Sản Phẩm')}</h3>
         
        <div className="row">
            <div className="col-md-7 form">
             <Form/>
             <br/>
             <br/>
-            <h6>History Update Stock</h6>
+            <h6>Lịch sử cập nhật số lượng</h6>
        <TableInventories/>
 
            </div>

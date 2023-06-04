@@ -77,7 +77,7 @@ const DiscountList = () => {
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <input
                   className="search-product"
-                  placeholder="Search product"
+                  placeholder="Tìm sản phẩm"
                   onChange={(e) => setSearchName(e.currentTarget.value)}
                 />
                 {user.role == "admin" && (

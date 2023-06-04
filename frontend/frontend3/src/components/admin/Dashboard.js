@@ -33,15 +33,15 @@ const Dashboard = () => {
   return (
     <div className="container-fluid py-4">
       <div className="row">
-        <CardItem title="Products" total={stProducts} icon="fas fa-archive" />
+        <CardItem title="Món ăn" total={stProducts} icon="fas fa-archive" />
         <CardItem
-          title="Orders"
+          title="Đơn hàng"
           total={stOrders.orders.length}
           icon="fas fa-shipping-fast"
         />
-        <CardItem title="User" total={stUsers} icon="fas fa-user" />
+        <CardItem title="Khách hàng" total={stUsers} icon="fas fa-user" />
         <CardItem
-          title="Total Payment"
+          title="Doanh thu"
           total={
             formatterMoney.format(Math.round((stOrders.totalPayment + Number.EPSILON) * 100) / 100)
           }

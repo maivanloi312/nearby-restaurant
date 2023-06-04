@@ -19,7 +19,7 @@ const CaroselHome=()=>{
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="/images/banner_tazas_1.png"
+      src="https://img.freepik.com/free-vector/flat-design-pizza-sale-banner_23-2149116013.jpg?w=1060&t=st=1685861895~exp=1685862495~hmac=8482c933dd624c8482b3fd396a7edeca232c379dc6c7d94a38fe88f2957b9894"
       alt="First slide"
     />
     
@@ -27,7 +27,7 @@ const CaroselHome=()=>{
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="/images/banner_tazas_2.png"
+      src="https://img.freepik.com/free-vector/flat-design-asian-food-facebook-template_23-2150057871.jpg?w=996&t=st=1685861934~exp=1685862534~hmac=27da51b0519712922b2d9b4dd2ac5e84d26975687fa25040fb134b0752041f12"
       alt="Second slide"
     />
 
@@ -36,7 +36,7 @@ const CaroselHome=()=>{
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="/images/banner_tazas_3.png"
+      src="https://img.freepik.com/free-vector/flat-design-food-sale-background_23-2149167390.jpg?w=1060&t=st=1685861970~exp=1685862570~hmac=384905b2ef7f9f7522d4b6f9bb9e4398aaf0a8cc6de461f61780bdd20e362c6f"
       alt="Third slide"
     />
 
@@ -84,18 +84,18 @@ const Home =()=>{
         <CaroselHome/>
         <br></br>
         <div className='container product-list'>
-          <input className='search-input-home' placeholder='Search product' onChange={(e)=>setSearch(e.currentTarget.value)}/>
+          <input className='search-input-home' placeholder='Tìm sản phẩm' onChange={(e)=>setSearch(e.currentTarget.value)}/>
           <button  type="submit">
               <i className="fa fa-search"></i>
           </button>
           <div style={{display:'inline-block',float:'right'}}>
-          <span>Filter Product</span>
+          <span>Bộ lọc</span>
           <span>
           <select className="form-select form-select-sex" aria-label="Default select example" onChange={(e)=>setClassify(e.target.value)}>
-          <option selected value='' >All</option>
-          <option  value={'Men'} >Nam</option>
-          <option  value={'Women'} >Nữ</option>
-          <option  value={'Kid'} >Trẻ em</option>
+          <option selected value='' >Tất cả</option>
+          <option  value={'New'} >Mới</option>
+          <option  value={'Signature'} >Signature</option>
+          <option  value={'Traditional'} >Truyền thống</option>
 
 </select>
           </span>
@@ -103,16 +103,16 @@ const Home =()=>{
 
           <select className="form-select" aria-label="Default select example" onChange={(e)=>setCategory(e.target.value)}>
         
-        <option selected value='' >All</option>
-              <option value={'T_SHIRT'}>Áo thun</option>
-              <option value={'SHIRT'}>Áo sơ mi</option>
-              <option value={'COAT'}>Áo khoác</option>
-              <option value={'SHORT'}>Quần lửng</option>
-              <option value={'TROUSER'}>Quần dài</option>
-              <option value={'SUIT'}>Vét</option>
-              <option value={'SHOES'}>Giày</option>
-              <option value={'HAT'}>Mũ</option>
-              <option value={'BAG'}>Túi xách</option>
+        <option selected value='' >Tất cả</option>
+              <option value={'BREAD'}>Bánh mì/Xôi</option>
+              <option value={'VEGETARIAN'}>Đồ chay</option>
+              <option value={'RICE'}>Cơm/Cơm tấm</option>
+              <option value={'NOODLE'}>Bún/Phở/Mì/Cháo</option>
+              <option value={'SEAFOOD'}>Ốc/Cá/Hải sản</option>
+              <option value={'HOTPOT'}>Lẩu/Đồ nướng</option>
+              <option value={'DESSERT'}>Giày</option>
+              <option value={'BEER'}>Bia/Rượu</option>
+              <option value={'SOFT'}>Sinh tố/Nước ngọt</option>
       </select>
           </span>
           </div>
@@ -157,7 +157,7 @@ const Home =()=>{
         
 
         </div>
-        <div style={{textAlign:'center'}}><button name="" id="" class="btn create-button" role="button" onClick={()=>loadMoreItem()}>Load More</button></div>
+        <div style={{textAlign:'center'}}><button name="" id="" class="btn create-button" role="button" onClick={()=>loadMoreItem()}>Xem thêm</button></div>
        </>
        
     )

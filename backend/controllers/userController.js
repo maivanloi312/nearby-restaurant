@@ -161,7 +161,7 @@ exports.updateProfile=catchAsyncErrors(async(req,res,next)=>{
     var avatar
     if(!checkUrlImage(req.body.avatarPr)){
         const result=await cloudinary.v2.uploader.upload(req.body.avatarPr,{
-            folder:'tazas'
+            folder:'nearby'
         })
         if(result){
             avatar={

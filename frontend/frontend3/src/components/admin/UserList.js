@@ -65,7 +65,7 @@ const UserList=()=>{
         <div className="card mb-4">
           <div className="card-header pb-0">
             <h6>User List</h6>
-            <input onChange={(e)=>changeSearchUser(e)} placeholder="Search product"/>
+            <input onChange={(e)=>changeSearchUser(e)} placeholder="Tìm sản phẩm"/>
             <div style={{display:'flex',justifyContent:'space-between'}}>
             </div>
             <br/>

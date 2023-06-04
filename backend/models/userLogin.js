@@ -6,14 +6,14 @@ const crypto=require('crypto')
 const userLoginSchema=new mongoose.Schema({
     email:{
         type:String,
-        required:[true,'Please enter your email'],
+        required:[true,'Vui lòng nhập email'],
         unique:true,
-        validate:[validator.isEmail,'Please enetr valid email address']
+        validate:[validator.isEmail,'Email không hợp lệ']
     },
     password:{
         type:String,
-        required:[true,'Please enter your Password'],
-        minlength:[6,'Your password must be longer than 6 characters'],
+        required:[true,'Vui lòng nhập mật khẩu'],
+        minlength:[6,'Mật khẩu tối thiểu 6 kí tự'],
         select:false
     },
     role:{

@@ -2,19 +2,19 @@ const mongoose=require('mongoose')
 const productSchema=new mongoose.Schema({
     name:{
         type:String,
-        required: [true,"Please enter product name"],
+        required: [true,"Vui lòng nhập tên món ăn"],
         trim: true,
-        maxLength: [100,"Product name cannot exceed 100 characters"]
+        maxLength: [100,"Tên món ăn không được quá 100 kí tự"]
     },
     price:{
         type:Number,
-        required:[true,"Please enter price"],
-        maxLength:[15,"Product price cannot exceed 15 characters "],
+        required:[true,"Vui lòng nhập giá"],
+        maxLength:[15,"Giá món ăn không được quá 15 kí tự"],
         default:0.0
     },
     description:{
         type:String,
-        required:[true,"please enter description"]
+        required:[true,"Vui lòng nhập mô tả"]
     },
    
     images:[
@@ -32,43 +32,51 @@ const productSchema=new mongoose.Schema({
     ],
     classify:{
         type:String,
-        required:[true,'Please enter classify'],
+        required:[true,'Vui lòng chọn phân loại'],
         enum:{
             values:[
-                "Men",
-                "Women",
-                "Kid"
+                "New",
+                "Signature",
+                "Traditional"
             ]
         }
     },
     category:{
         type:String,
-        required:[true,'Please enter category'],
+        required:[true,'Vui lòng chọn danh mục'],
         enum:{
             values:[
-                'T_SHIRT',
-                'SHIRT',
-                'COAT',
-                'SHORT',
-                'TROUSER',
-                'SUIT',
-                'SHOES',
-                'HAT',
-                'BAG',
-
+                // 'T_SHIRT',
+                // 'SHIRT',
+                // 'COAT',
+                // 'SHORT',
+                // 'TROUSER',
+                // 'SUIT',
+                // 'SHOES',
+                // 'HAT',
+                // 'BAG',
+                'BREAD', //'Bánh mì/Xôi',
+                'VEGETARIAN',//Đồ chay',
+                'RICE', //'Cơm/Cơm tấm',
+                'NOODLE',//'Bún/Phở/Mì/Cháo',
+                'SEAFOOD',//Ốc/Cá/Hải sản',
+                'HOTPOT', //Lẩu/Đồ nướng
+                'DESSERT',//'Tráng miệng',
+                'BEER',//'Bia/Rượu',
+                'DRINK',//'Sinh tố/Nước ngọt',
                 
             ],
-            message:'Please enter select category'
+            message:'Vui lòng chọn danh mục'
         }
     },
     seller:{
         type:String,
-        required:[true,'Please enter product seller']
+        required:[true,'Vui lòng nhập người bán']
     },
     stock:{
         type:Number,
-        required:[true,'Please enter product stock'],
-        maxLength:[5,'Product stock cannot exceed 5 characters']
+        required:[true,'Vui lòng nhập số lượng hàng'],
+        maxLength:[5,'Số lượng hàng không được quá 5 kí tự']
     },
    
     createdAt:{
