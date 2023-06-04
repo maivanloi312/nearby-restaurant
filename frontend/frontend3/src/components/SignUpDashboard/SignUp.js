@@ -18,22 +18,15 @@ const MenuSignUp=()=>{
       <div className="collapse navbar-collapse" id="navigation">
         <ul className="navbar-nav mx-auto">
           <li className="nav-item">
-            <Link className="nav-link d-flex align-items-center me-2 active" aria-current="page" to="/admin/dashboard">
-              <i className="fa fa-chart-pie opacity-6  me-1" aria-hidden="true" />
-              Dashboard
-            </Link>
-          </li>
-          
-          <li className="nav-item">
             <Link className="nav-link me-2" to="/create-account">
               <i className="fas fa-user-circle opacity-6  me-1" aria-hidden="true" />
-              Sign Up
+              Đăng kí
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link me-2" to="/login">
               <i className="fas fa-key opacity-6  me-1" aria-hidden="true" />
-              Sign In
+              Đăng nhập
             </Link>
           </li>
         </ul>
@@ -51,8 +44,7 @@ const BackgroundSignUp=()=>{
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-lg-5 text-center mx-auto">
-          <h1 className="text-white mb-2 mt-5">Welcome!</h1>
-          <p className="text-lead text-white">Use these awesome forms to login or create new account in your project for free.</p>
+          <h1 className="text-white mb-2 mt-5">Chào mừng bạn đến với Nearby Restaurant!</h1>
         </div>
       </div>
     </div>
@@ -81,7 +73,7 @@ const Form=()=>{
             // "avatar":avatar
         }
         await clientRequest.createUser(userData).then(res=>{
-          NotificationManager.success('Success message', 'Account successfully created')
+          NotificationManager.success('Success message', 'Đăng kí tài khoản thành công')
           setIsRedirect(!isRedirect)
       })
        
@@ -106,7 +98,7 @@ const Form=()=>{
     {isRedirect && <Redirect to="/login"/>}
     <div className="card z-index-0">
     <div className="card-header text-center pt-4">
-      <h5>Register</h5>
+      <h5>Đăng kí tài khoản</h5>
     </div>
     
     <div className="card-body">
@@ -116,14 +108,14 @@ const Form=()=>{
           <input onChange={(e)=>setEmail(e.currentTarget.value)} type="email" className="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon" />
         </div>
         <div className="mb-3">
-          <input onChange={(e)=>setPassword(e.currentTarget.value)} type="password" className="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon" />
+          <input onChange={(e)=>setPassword(e.currentTarget.value)} type="password" className="form-control" placeholder="Mật khẩu" aria-label="Password" aria-describedby="password-addon" />
         </div>
       
        
         <div className="text-center">
-          <button type="submit" className="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
+          <button type="submit" className="btn bg-gradient-dark w-100 my-4 mb-2">Đăng kí</button>
         </div>
-        <p className="text-sm mt-3 mb-0">Already have an account? <Link to="/login" className="text-dark font-weight-bolder">Sign in</Link></p>
+        <p className="text-sm mt-3 mb-0">Bạn có tài khoản chưa? <Link to="/login" className="text-dark font-weight-bolder">Đăng nhập</Link></p>
       </form>
     </div>
   </div>

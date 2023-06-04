@@ -63,7 +63,7 @@ const Login = () => {
                     className="fas fa-user-circle opacity-6 text-dark me-1"
                     aria-hidden="true"
                   />
-                  Sign Up
+                  Đăng kí
                 </Link>
               </li>
               <li className="nav-item">
@@ -72,7 +72,7 @@ const Login = () => {
                     className="fas fa-key opacity-6 text-dark me-1"
                     aria-hidden="true"
                   />
-                  Sign In
+                  Đăng nhập
                 </Link>
               </li>
             </ul>
@@ -88,16 +88,16 @@ const Login = () => {
       clientRequest
         .forgotPassword({ email: document.getElementsByName("email")[0].value })
         .then((res) =>
-          NotificationManager.success("Success", "Send email complete")
+          NotificationManager.success("Success", "Gửi mail thành công")
         )
         .catch((err) =>
-          NotificationManager.error("Error", "Send email failed")
+          NotificationManager.error("Error", "Gửi mail thất bại")
         );
     };
     return (
       <div className="card card-plain mt-8">
         <div className="card-header pb-0 text-left bg-transparent">
-          <p className="mb-0">Enter your email</p>
+          <p className="mb-0">Nhập email của bạn</p>
         </div>
         <div className="card-body">
           <form role="form text-left" onSubmit={sendEmail}>
@@ -112,25 +112,25 @@ const Login = () => {
                 aria-describedby="email-addon"
               />
             </div>
-            <p onClick={() => setCheckForgot(!checkForgot)}>Back to login</p>
+            <p onClick={() => setCheckForgot(!checkForgot)}>Trở về màn hình đăng nhập</p>
             <div className="text-center">
               <button
                 type="submit"
                 className="btn bg-gradient-info w-100 mt-4 mb-0"
               >
-                Send Email
+                Gửi mail
               </button>
             </div>
           </form>
         </div>
         <div className="card-footer text-center pt-0 px-lg-2 px-1">
           <p className="mb-4 text-sm mx-auto">
-            Don't have an account?
+            Bạn có tài khoản chưa?
             <Link
               to="/create-account"
               className="text-info text-gradient font-weight-bold"
             >
-              Sign up
+              Đăng kí ngay
             </Link>
           </p>
         </div>
@@ -168,9 +168,9 @@ const Login = () => {
       <div className="card card-plain mt-8">
         <div className="card-header pb-0 text-left bg-transparent">
           <h3 className="font-weight-bolder text-info text-gradient">
-            Welcome back
+            Chào mừng trở lại
           </h3>
-          <p className="mb-0">Enter your email and password to sign in</p>
+          <p className="mb-0">Nhập đầy đủ email và mật khẩu để đăng nhập</p>
         </div>
         <div className="card-body">
           <form role="form text-left" onSubmit={submitHandler}>
@@ -185,13 +185,13 @@ const Login = () => {
                 aria-describedby="email-addon"
               />
             </div>
-            <label>Password</label>
+            <label>Mật khẩu</label>
             <div className="mb-3">
               <input
                 type="password"
                 onChange={(event) => setStPassword(event.currentTarget.value)}
                 className="form-control"
-                placeholder="Password"
+                placeholder="Mật khẩu"
                 aria-label="Password"
                 aria-describedby="password-addon"
               />
@@ -204,13 +204,13 @@ const Login = () => {
                 defaultChecked
               />
               <label className="form-check-label" htmlFor="rememberMe">
-                Remember me
+                Ghi nhớ đăng nhập
               </label>
               <span
                 onClick={() => setCheckForgot(!checkForgot)}
                 style={{ float: "right", color: "#21d4fd" }}
               >
-                Forgot Password
+                Quên mật khẩu
               </span>
             </div>
             <div className="text-center">
@@ -218,19 +218,19 @@ const Login = () => {
                 type="submit"
                 className="btn bg-gradient-info w-100 mt-4 mb-0"
               >
-                Sign in
+                Đăng nhập
               </button>
             </div>
           </form>
         </div>
         <div className="card-footer text-center pt-0 px-lg-2 px-1">
           <p className="mb-4 text-sm mx-auto">
-            Don't have an account?
+            Bạn có tài khoản chưa?
             <Link
               to="/create-account"
               className="text-info text-gradient font-weight-bold"
             >
-              Sign up
+               Đăng kí ngay
             </Link>
           </p>
         </div>
@@ -259,13 +259,13 @@ const Login = () => {
   return (
     <>
     <div className={"g-sidenav-show  bg-white"}>
-      <div className={"container position-sticky z-index-sticky top-0"}>
+      {/* <div className={"container position-sticky z-index-sticky top-0"}>
         <div className={"row"}>
           <div className={"col-12"}>
             <Menu />
           </div>
         </div>
-      </div>
+      </div> */}
       <section>
         <div className={"page-header section-height-75"}>
           <div className={"container"}>

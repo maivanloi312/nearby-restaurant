@@ -25,7 +25,7 @@ export const login=(email,password)=>async(dispatch)=>{
             type:LOGIN_SUCCESS,
             payload:data.user
         })
-        NotificationManager.success('Success', 'Login success');
+        NotificationManager.success('Success', 'Đăng nhập thành công');
         
         // window.location.href = '/profile';
 

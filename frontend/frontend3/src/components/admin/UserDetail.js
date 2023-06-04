@@ -127,23 +127,23 @@ const UserDetail=(props)=>{
         return
       }
       if(props.match.path=='/profile'){
-        clientRequest.updateUser(data,avatarPr).then(res=>NotificationManager.success('Success', 'Update success')).catch(err=>NotificationManager.error('error', 'Update failed'))
+        clientRequest.updateUser(data,avatarPr).then(res=>NotificationManager.success('Success', 'Cập nhật thành công')).catch(err=>NotificationManager.error('error', 'Update failed'))
       }
       else{
-        clientRequest.updateUserDetail(props.match.params.id,data,avatarPr).then(res=>NotificationManager.success('Success', 'Update success')).catch(err=>NotificationManager.error('error', 'User deleted before'))
+        clientRequest.updateUserDetail(props.match.params.id,data,avatarPr).then(res=>NotificationManager.success('Success', 'Cập nhật thành công')).catch(err=>NotificationManager.error('error', 'User deleted before'))
       }
       setEdit(true)
     }
 
     const deleteUser=async()=>{
       if(props.match.path=='/profile'){
-        await clientRequest.deleteAccountMe().then(res=>{NotificationManager.success('Success', 'Update success')
+        await clientRequest.deleteAccountMe().then(res=>{NotificationManager.success('Success', 'Cập nhật thành công')
         localStorage.removeItem("token");
         window.location.href='/login'
       })
       }
       else{
-        clientRequest.deleteUserDetail(props.match.params.id).then(res=>{NotificationManager.success('Success', 'Update success')
+        clientRequest.deleteUserDetail(props.match.params.id).then(res=>{NotificationManager.success('Success', 'Cập nhật thành công')
         window.location.href='/admin/users'
       })
       }
@@ -156,7 +156,7 @@ const UserDetail=(props)=>{
           <div className="card-header pb-0 p-3">
             <div className="row">
               <div className="col-md-8 d-flex align-items-center">
-                <h6 className="mb-0">Profile Information</h6>
+                <h6 className="mb-0">Thông tin tài khoản</h6>
               </div>
               <div className="col-md-4 text-right">
                 <a href="javascript:;">
@@ -165,10 +165,10 @@ const UserDetail=(props)=>{
                   setDisabledAvatar(false)
                   }} className="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title aria-hidden="true" data-bs-original-title="Edit Profile" aria-label="Edit Profile" />
                   :(<div className="btn-group">
-                    <button className='btn btn-primary' onClick={()=>saveUser()}>Save</button>
+                    <button className='btn btn-primary' onClick={()=>saveUser()}>Lưu</button>
                   {props.match.path=='/profile' &&<><button className='btn' 
-                  onClick={()=>setChangePass(!changePass)}>Change Password</button></>}
-                  {props.match.path=='/profile'&& <button className='btn' onClick={()=>deleteUser()} >Delete</button>}
+                  onClick={()=>setChangePass(!changePass)}>Đổi mật khẩu</button></>}
+                  {props.match.path=='/profile'&& <button className='btn' onClick={()=>deleteUser()} >Xóa</button>}
                   </div>
                   )
                   } 
@@ -180,27 +180,26 @@ const UserDetail=(props)=>{
             
             <hr className="horizontal gray-light my-4" />
             <ul className="list-group">
-              <li className="list-group-item border-0 ps-0 pt-0 text-sm"><strong className="text-dark">Full Name:</strong> &nbsp;<input name='name' defaultValue={user.name} disabled={props.match.path=="/admin/user/:id"||edit}/> </li>
+              <li className="list-group-item border-0 ps-0 pt-0 text-sm"><strong className="text-dark">Tên:</strong> &nbsp;<input name='name' defaultValue={user.name} disabled={props.match.path=="/admin/user/:id"||edit}/> </li>
               <li className="list-group-item border-0 ps-0 text-sm"><strong className="text-dark">Email:</strong> &nbsp; <input name='emailUser' defaultValue={user.emailUser} disabled={props.match.path=="/admin/user/:id"||edit}/></li>
-              <li className="list-group-item border-0 ps-0 text-sm"><strong className="text-dark">Role:</strong> &nbsp;
+              <li className="list-group-item border-0 ps-0 text-sm"><strong className="text-dark">Quyền:</strong> &nbsp;
               <select defaultValue={user.role} name='role' disabled={props.match.path=="/admin/user/:id"&&!edit?false:true}>
-  <option value="user">user</option>
-  <option value="admin">admin</option>
-</select>
-
+                <option value="user">user</option>
+                <option value="admin">admin</option>
+              </select>
                </li>
-               <li className="list-group-item border-0 ps-0 text-sm"><strong className="text-dark">Date Of Birth:</strong> &nbsp;
+               <li className="list-group-item border-0 ps-0 text-sm"><strong className="text-dark">Ngày sinh:</strong> &nbsp;
                <input type="date" id="start" name="dateOfBirth"
-       defaultValue={user.dateOfBirth}
-       min="1960-01-01" disabled={props.match.path=="/admin/user/:id"||edit}/>
+                defaultValue={user.dateOfBirth}
+                min="1960-01-01" disabled={props.match.path=="/admin/user/:id"||edit}/>
                </li>
-               <li className="list-group-item border-0 ps-0 text-sm"><strong className="text-dark">Place Of Birth:</strong> &nbsp;
+               <li className="list-group-item border-0 ps-0 text-sm"><strong className="text-dark">Địa chỉ:</strong> &nbsp;
                <input  name="placeOfBirth" defaultValue={user.placeOfBirth} disabled={props.match.path=="/admin/user/:id"||edit}/>
                </li>
-               <li className="list-group-item border-0 ps-0 text-sm"><strong className="text-dark">Phone Number:</strong> &nbsp;
+               <li className="list-group-item border-0 ps-0 text-sm"><strong className="text-dark">SĐT:</strong> &nbsp;
                <input name="phoneNumber" defaultValue={user.phoneNumber} disabled={props.match.path=="/admin/user/:id"||edit}/>
                </li>
-              <li className="list-group-item border-0 ps-0 text-sm"><strong className="text-dark">Create At:</strong> &nbsp; {getFormattedDate(user.createAt)}</li>
+              <li className="list-group-item border-0 ps-0 text-sm"><strong className="text-dark">Ngày tạo:</strong> &nbsp; {getFormattedDate(user.createAt)}</li>
               
             </ul>
           </div>
@@ -215,11 +214,11 @@ const UserDetail=(props)=>{
         password:document.getElementsByName('password')[0].value,
       }
       clientRequest.updatePassword(data.oldPassword,data.password).then(res=>{
-        NotificationManager.success('Success', 'Update password success')
+        NotificationManager.success('Success', 'Đổi mật khẩu thành công')
       localStorage.removeItem("token");
       window.location.href='/login'
     }).catch(err=>
-      NotificationManager.error('Error', 'Update password failed')
+      NotificationManager.error('Error', 'Đổi mật khẩu thất bại')
     )
 
     }
@@ -227,18 +226,17 @@ const UserDetail=(props)=>{
       return (<div className="col-12 col-xl-4 change-password">
        
       <div className="card h-100">
-     
         <div className="card-header pb-0 p-3">
-        <div className="btn-group"><button className='btn' onClick={()=>setChangePass(!changePass)}>Back</button>
+        <div className="btn-group"><button className='btn' onClick={()=>setChangePass(!changePass)}>Hủy</button>
                   <button className='btn btn-primary' 
                   onClick={()=>savePassword()}
-                  >Save</button></div>
-          <h6 className="mb-0">Change Password</h6>
+                  >Lưu</button></div>
+          <h6 className="mb-0">Đổi mật khẩu</h6>
        
         </div>
         <div className="card-body p-3">
-          <input placeholder="Old Password" name='oldPassword' type='password'/>
-          <input placeholder="Password" name='password' type='password'/>
+          <input placeholder="Mật khẩu cũ" name='oldPassword' type='password'/>
+          <input placeholder="Mật khẩu mới" name='password' type='password'/>
         </div>
       </div>
     </div>

@@ -31,7 +31,7 @@ const Sidebar=()=>{
   <hr className="horizontal dark mt-0" />
   <div className="collapse navbar-collapse  w-auto" id="sidenav-collapse-main">
     <ul className="navbar-nav">
-    <SidebarRow url={'/home'} icon={"fas fa-store"} title={'Store'}/>
+    <SidebarRow url={'/home'} icon={"fas fa-store"} title={'Nhà hàng'}/>
       {user.role=='admin'&&<SidebarRow url={'/admin/dashboard'} icon={'fas fa-home'} title={'Tổng quan'}/>}
       {user.role=='admin'&&<SidebarRow url={'/admin/products'} icon={'fas fa-archive'} title={'Món ăn'}/>}
       {user.role=='admin'&&<SidebarRow url={'/admin/orders'} icon={"fas fa-shipping-fast"} title={'Đơn hàng'}/>}
