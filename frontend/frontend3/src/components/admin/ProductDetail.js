@@ -163,9 +163,9 @@ const ProductDetail=(props)=>{
           <div className="form-group col-md-4">
             <label>Phân loại</label>
             <select className="form-control" name='classify' defaultValue={stProduct.classify}>
-              <option selected>Mới</option>
-              <option>Signature</option>
-              <option>Truyền thống</option>
+              <option value="New" selected>Mới</option>
+              <option value="Signature">Signature</option>
+              <option value="Traditional">Truyền thống</option>
             </select>
           </div>
           <div className="form-group col-md-4">

@@ -6,7 +6,7 @@ const SidebarRow=(props)=>{
 
   return (
     <li className={'nav-item sidebar'}>
-        <Link className="nav-link" to={props.url}>
+        <Link className="new-nav-link nav-link" to={props.url}>
           <i class={props.icon}></i>
            
           <span className="nav-link-text ms-1">{props.title}</span>

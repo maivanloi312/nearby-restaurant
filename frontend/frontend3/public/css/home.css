@@ -3,3 +3,18 @@
     max-width: 100%;
     z-index: 1100;
 }
+
+.new-font {
+    font-family: 'Roboto', sans-serif;
+}
+
+.new-nav-link {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: red !important;
+}
+
+.page-item.disabled .page-link {
+    color: blue !important;
+}
