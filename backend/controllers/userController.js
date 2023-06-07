@@ -75,7 +75,7 @@ exports.forgotPassword=catchAsyncErrors(async(req,res,next)=>{
     const resetToken=userLogin.getResetPasswordToken()
     const numberToken=userLogin.getRandomNumberBetween(999999,100000)
     await userLogin.save({validateBeforeSave:false})
-    const resetUrl=`${process.env.NODE_ENV==='PRODUCTION'? process.env.FRONTEND_URL:'https://nearbyrestaurant.up.railway.app'}/api/v1/password/reset/${resetToken}`
+    const resetUrl=`${process.env.NODE_ENV !=='PRODUCTION'? process.env.FRONTEND_URL:'https://nearbyrestaurant.up.railway.app'}/api/v1/password/reset/${resetToken}`
     const message =`Bạn đã yêu cầu khôi phục mật khẩu, nhấp vào đường dẫn sau để hoàn tất đổi mật khẩu: \n\n${resetUrl}\n\nNếu bạn không yêu cầu thực hiện hành động này, vui lòng bỏ qua email này
     \n\n Nếu bạn sử dụng mobile app, hãy sử dụng mã khôi phục : ${numberToken}`
     try {
