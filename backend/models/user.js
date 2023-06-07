@@ -10,8 +10,8 @@ const userSchema=new mongoose.Schema({
     },
     name:{
         type:String,
-        required: [true,'Please enter your name'],
-        maxLength:[40,'Your name cannot exceed 30 characters']
+        required: [true,'Vui lòng nhập tên của bạn'],
+        maxLength:[40,'Tên không được quá 40 kí tự']
     },
    
     avatar:{

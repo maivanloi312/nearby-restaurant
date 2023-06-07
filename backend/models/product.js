@@ -63,7 +63,7 @@ const productSchema=new mongoose.Schema({
                 'HOTPOT', //Lẩu/Đồ nướng
                 'DESSERT',//'Tráng miệng',
                 'BEER',//'Bia/Rượu',
-                'DRINK',//'Sinh tố/Nước ngọt',
+                'SOFT',//'Sinh tố/Nước ngọt',
                 
             ],
             message:'Vui lòng chọn danh mục'
@@ -71,7 +71,7 @@ const productSchema=new mongoose.Schema({
     },
     seller:{
         type:String,
-        required:[true,'Vui lòng nhập người bán']
+        required:true,
     },
     stock:{
         type:Number,

@@ -206,12 +206,12 @@ const Login = () => {
               <label className="form-check-label" htmlFor="rememberMe">
                 Ghi nhớ đăng nhập
               </label>
-              <span
+              {/* <span
                 onClick={() => setCheckForgot(!checkForgot)}
                 style={{ float: "right", color: "#ffc107" }}
               >
                 Quên mật khẩu
-              </span>
+              </span> */}
             </div>
             <div className="text-center">
               <button

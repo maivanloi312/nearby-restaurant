@@ -84,7 +84,7 @@ const Home =()=>{
         <CaroselHome/>
         <br></br>
         <div className='container product-list'>
-          <input className='search-input-home' placeholder='Tìm sản phẩm' onChange={(e)=>setSearch(e.currentTarget.value)}/>
+          <input className='search-input-home' placeholder='Tìm món ăn' onChange={(e)=>setSearch(e.currentTarget.value)}/>
           <button  type="submit">
               <i className="fa fa-search"></i>
           </button>

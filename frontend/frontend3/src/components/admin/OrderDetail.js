@@ -414,7 +414,7 @@ const OrderDetail = (props) => {
                   className="btn btn-order"
                   onClick={(status) => updateOrderStatus("Delivered")}
                 >
-                  Đã giao hàng
+                  Đang giao hàng
                 </button>
               )}
             {order.orderStatus == "Delivered" &&

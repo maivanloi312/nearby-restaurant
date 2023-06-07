@@ -86,7 +86,7 @@ const ProductsList=()=>{
         <div className="card-header pb-0">
           <h6>Danh sách món ăn</h6>
           <div style={{display:'flex',justifyContent:'space-between'}}>
-          <input className='search-product' onChange={e=>onChangeSearchProduct(e)} placeholder="Tìm sản phẩm"/>
+          <input className='search-product' onChange={e=>onChangeSearchProduct(e)} placeholder="Tìm món ăn"/>
           <Link name="" id="" class="btn create-button" to="/admin/create-product" role="button" style={{background:"orange"}}>Thêm Món Ăn</Link>
           </div>
           <br/>

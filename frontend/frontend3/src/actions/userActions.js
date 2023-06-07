@@ -35,7 +35,7 @@ export const login=(email,password)=>async(dispatch)=>{
             type: LOGIN_FAIL,
             payload:error.response.data.message
         })
-        NotificationManager.error('Error message', 'Account creation failed');
+        NotificationManager.error('Error message', 'Thông tin đăng nhập không chính xác');
 
     }
 }
